@@ -19,7 +19,7 @@ func update_mouvement():
 
 	if Input.is_action_pressed("se_déplacer_vers_la_gauche") and not Input.is_action_pressed("se_déplacer_vers_la_droite") :
 		mouvement.x -= VITESSE
-	elif Input.is_action_pressed("se_déplacer_vers_la_droit") and not Input.is_action_pressed("se_déplacer_vers_la_gauche") :
+	elif Input.is_action_pressed("se_déplacer_vers_la_droite") and not Input.is_action_pressed("se_déplacer_vers_la_gauche") :
 		mouvement.x += VITESSE
 	else:
 		mouvement.x = 0
