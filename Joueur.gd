@@ -10,7 +10,8 @@ func _physics_process(delta):
 	move_and_slide(mouvement)
 
 func maj_mouvement():
-
+	# Le personnage suivra la direction du souris.
+	look_at(get_global_mouse_position())
 	
 	# clamp Fixe la valeur et renvoie une valeur non inférieure à min et pas supérieure à max.
 	if Input.is_action_pressed("se_déplacer_vers_le_bas") and not Input.is_action_pressed("se_déplacer_vers_le_haut") :
