@@ -17,3 +17,6 @@ tile_data = PoolIntArray( -327688, 0, 65542, -327687, 0, 2, -327686, 0, 2, -3276
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.313726, 0.309804, 0.309804, 1 )
