@@ -29,3 +29,7 @@ func maj_mouvement():
 		mouvement.x = clamp(mouvement.x + VITESSE, 0, VITESSE_MAX)
 	else:
 		mouvement.x = lerp(mouvement.x, 0, FRICTION)
+
+func _input(event):
+	if Input.is_action_just_pressed("torche"):
+		$Torche.enabled = !$Torche.enabled
