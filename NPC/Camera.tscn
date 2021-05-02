@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Lightmaps/Torche.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/PNG/Tiles/tile_536.png" type="Texture" id=2]
+[ext_resource path="res://GFX/PNG/Tiles/tile_463.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "RotationCamera"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 52.5488, 52.5488, 119.248, 119.2 ]
+}
+
+[node name="Camera" type="Node2D"]
+
+[node name="Support" type="Sprite" parent="."]
+scale = Vector2( 0.322, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="CameraCorps" type="KinematicBody2D" parent="."]
+position = Vector2( 8.37841, 0.360203 )
+rotation = 0.91715
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CameraCorps"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraCorps"]
+visible = false
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Torche" parent="CameraCorps" instance=ExtResource( 1 )]
+position = Vector2( 0, -10 )
+rotation = -1.5708
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraCorps"]
+autoplay = "RotationCamera"
+anims/RotationCamera = SubResource( 2 )
