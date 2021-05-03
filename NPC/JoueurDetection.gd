@@ -45,19 +45,3 @@ func Joueur_in_LDM():
 		return true
 	else:
 		return false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
