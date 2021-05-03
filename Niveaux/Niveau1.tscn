@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Niveaux/NiveauModele.tscn" type="PackedScene" id=1]
 [ext_resource path="res://NPC/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NPC/Garde.tscn" type="PackedScene" id=3]
 
 [node name="Niveau1" instance=ExtResource( 1 )]
 
@@ -18,3 +19,10 @@ rotation = -3.14159
 [node name="Camera3" parent="Cameras" index="2" instance=ExtResource( 2 )]
 position = Vector2( 606.692, -688.089 )
 rotation = 1.5708
+
+[node name="Garde" parent="Gardes" index="0" instance=ExtResource( 3 )]
+position = Vector2( 510.557, 65.9154 )
+
+[node name="Garde2" parent="Gardes" index="1" instance=ExtResource( 3 )]
+position = Vector2( 362.903, -403.524 )
+rotation = -2.27355
