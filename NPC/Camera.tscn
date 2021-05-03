@@ -10,6 +10,7 @@
 resource_name = "RotationCamera"
 length = 12.0
 loop = true
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
@@ -20,35 +21,35 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 6, 8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 52.5488, 52.5488, 119.248, 119.2 ]
+"values": [ -30.0, -30.0, 30.0, 30.0 ]
 }
 
 [node name="Camera" type="Node2D"]
 
 [node name="Support" type="Sprite" parent="."]
-scale = Vector2( 0.322, 0.5 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
-[node name="CameraCorps" type="KinematicBody2D" parent="."]
-position = Vector2( 8.37841, 0.360203 )
-rotation = 0.91715
-scale = Vector2( 0.5, 0.5 )
+[node name="CameraBody" type="KinematicBody2D" parent="."]
+position = Vector2( 7.904, -1.256 )
+rotation = -0.523599
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="CameraCorps"]
+[node name="Sprite" type="Sprite" parent="CameraBody"]
+rotation = 1.5708
+scale = Vector2( 0.5, 0.75 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraCorps"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBody"]
 visible = false
 shape = SubResource( 1 )
 disabled = true
 
-[node name="Torche" parent="CameraCorps" instance=ExtResource( 1 )]
-position = Vector2( 0, -10 )
-rotation = -1.5708
+[node name="Torche" parent="CameraBody" instance=ExtResource( 1 )]
+position = Vector2( 16, 0 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraCorps"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraBody"]
 autoplay = "RotationCamera"
 anims/RotationCamera = SubResource( 2 )
