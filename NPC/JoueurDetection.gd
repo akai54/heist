@@ -1,6 +1,8 @@
 extends "res://Personnages/ModèlePersonnage.gd"
 
 const FOV_TOLERANCE = 20
+const MAX_DETECTION_INTERVALLE = 640
+
 const ROUGE = Color(1,0.25,0.25)
 const BLANC = Color(1,1,1)
 
@@ -36,8 +38,26 @@ func Joueur_in_LDM():
 		return false
 	
 	var distance_to_Joueur = Joueur.global_position.distance_to(global_position)
+	var Joueur_in_intervalle = distance_to_Joueur < MAX_DETECTION_INTERVALLE
 	
-	if LDM_obstacle.collider == Joueur:
+	
+	if LDM_obstacle.collider == Joueur and Joueur_in_intervalle:
 		return true
 	else:
 		return false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
