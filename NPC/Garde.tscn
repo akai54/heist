@@ -20,3 +20,9 @@ position = Vector2( 1.59099, 0.0883884 )
 
 [node name="Torche" parent="." index="3" instance=ExtResource( 1 )]
 position = Vector2( 13.283, 0 )
+
+[node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
